@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+{% block header %}
+    <div class="jumbotron jumbotron-main">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ path('projet_app_map_index') }}"><img src="{{ asset('assets/images/map.png') }}" alt="Miriade"></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse" >
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="{{ path('projet_app_map_index') }}">Accueil</a>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-right">
+                        {% if app.user %}
+                            <a href="{{ path('fos_user_security_logout') }}" class="btn btn-primary">Déconnexion</a>
+                        {% else %}
+                            <a href="{{ path('fos_user_security_login') }}" class="btn btn-primary">Connexion</a>
+                            <a href="{{ path('fos_user_registration_register') }}" class="btn btn-success">Inscription</a>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="container intro-message">
+            {% block intromessage %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

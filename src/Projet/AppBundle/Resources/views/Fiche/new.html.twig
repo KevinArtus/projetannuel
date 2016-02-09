@@ -1,0 +1,58 @@
+{% extends 'ProjetAppBundle::layout.html.twig' %}
+
+{% block content %}
+    <div id="event-wrapper" class="container">
+        <div class="row">
+            <div class="col-md-9">
+                {{ form_start(form, {"action":  path('projet_app_fiche_create') }) }}
+                <div class="session-creation">
+                    <div class="list-group row well" id="sessions-container"></div>
+                    <h2>Création d'une fiche</h2>
+                    <div class="event-creation row well">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(form.libelle) }}
+                                    {{ form_widget(form.libelle, {'attr' : {'class' : 'form-control', 'full_name' : 'session_title', 'placeholder' : 'Le nom de la fiche (ex: Ecole de John'}}) }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        {{ form_label(form.address) }}
+                                        {{ form_widget(form.address, {'attr' : {'class' : 'form-control', 'placeholder' : 'Adresse'}}) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_label(form.zipcode) }}
+                                        {{ form_widget(form.zipcode, {'attr' : {'class' : 'form-control', 'placeholder' : 'Code Postal'}}) }}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        {{ form_label(form.city) }}
+                                        {{ form_widget(form.city, {'attr' : {'class' : 'form-control', 'placeholder' : 'Ville'}}) }}
+                                    </div>
+                                    <div class="form-group">
+                                        <div id="map-container" class="col-md-8"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="send-form" class="row well justified" style="margin-top: 20px;">
+                    <input type="submit" class="btn btn-lg btn-success" name="form_action" value="Créer la fiche"/>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+{%block javascripts%}
+    <script src="{{ asset('assets/js/bootstrap-datetimepicker.js') }}"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
+    <script src="{{ asset('assets/js/form.js') }}"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="{{ asset('assets/js/map.js') }}"></script>
+{%endblock%}

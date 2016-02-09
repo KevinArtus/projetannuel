@@ -1,0 +1,14 @@
+projet_app_fiche_new:
+    pattern: /fiche/new
+    defaults:
+        _controller: ProjetAppBundle:Fiche:new
+
+projet_app_fiche_create:
+    pattern: /fiche/create
+    defaults:
+        _controller: ProjetAppBundle:Fiche:create
+
+projet_app_map_index:
+    pattern: /
+    defaults:
+        _controller: ProjetAppBundle:Map:index
