@@ -25,7 +25,8 @@ class MapController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return $this->render('map/index.html.twig', array(
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..'),
-        ));    }
+        return $this->render(
+            'ProjetAppBundle:Map:index.html.twig', array()
+        );
+    }
 }

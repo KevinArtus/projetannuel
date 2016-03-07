@@ -65,9 +65,9 @@ class FicheController extends Controller
     }
 
     /**
-     * Creates a new Event entity.
+     * Creates a new Fiche entity.
      * @Method("POST")
-     * @Template("MiriadeEventBundle:Event:new.html.twig")
+     * @Template("ProjetAppBundle:Fiche:new.html.twig")
      */
     public function createAction(Request $request)
     {
@@ -75,6 +75,17 @@ class FicheController extends Controller
 
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
+
+        $address = urlencode($entity->getAddress());
+        $zipcode = $entity->getZipcode();
+        $city = $entity->getCity();
+
+        //Récuperation de la longitude et de la latitude en fonction de l'adresse et du code postal
+        $coordpolaire = file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address=".$address."".$city."&key=AIzaSyDePZt3uyPPCISJtyM5nvkmL_s5YxjcqBo");
+        $json = json_decode($coordpolaire);
+
+        $entity->setLatitude($json->{'results'}[0]->{'geometry'}->{'location'}->{'lat'});
+        $entity->setLongitude($json->{'results'}[0]->{'geometry'}->{'location'}->{'lng'});
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();

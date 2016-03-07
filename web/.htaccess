@@ -3,7 +3,7 @@
 # mod_rewrite). Additionally, this reduces the matching process for the
 # start page (path "/") because otherwise Apache will apply the rewriting rules
 # to each configured DirectoryIndex file (e.g. index.php, index.html, index.pl).
-DirectoryIndex app.php
+#DirectoryIndex app.php
 
 # By default, Apache does not evaluate symbolic links if you did not enable this
 # feature in your server configuration. Uncomment the following line if you
@@ -14,7 +14,7 @@ DirectoryIndex app.php
 # Disabling MultiViews prevents unwanted negotiation, e.g. "/app" should not resolve
 # to the front controller "/app.php" but be rewritten to "/app.php/app".
 <IfModule mod_negotiation.c>
-    Options -MultiViews
+    #Options -MultiViews
 </IfModule>
 
 <IfModule mod_rewrite.c>

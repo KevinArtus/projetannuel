@@ -45,6 +45,20 @@ class Fiche
     private $city;
 
     /**
+     * @var float
+     *
+     * @ORM\Column(name="latitude", type="float", nullable=true)
+     */
+    public $latitude;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="longitude", type="float", nullable=true)
+     */
+    public $longitude;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Projet\UserBundle\Entity\User", inversedBy="fiche")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      * */
@@ -90,9 +104,9 @@ class Fiche
      * @param string $adress
      * @return Fiche
      */
-    public function setAdress($adress)
+    public function setAddress($address)
     {
-        $this->adress = $adress;
+        $this->address = $address;
 
         return $this;
     }
@@ -102,9 +116,9 @@ class Fiche
      *
      * @return string 
      */
-    public function getAdress()
+    public function getAddress()
     {
-        return $this->adress;
+        return $this->address;
     }
 
     /**
@@ -177,25 +191,48 @@ class Fiche
     }
 
     /**
-     * Set address
+     * Set latitude
      *
-     * @param string $address
+     * @param float $latitude
      * @return Fiche
      */
-    public function setAddress($address)
+    public function setLatitude($latitude)
     {
-        $this->address = $address;
+        $this->latitude = $latitude;
 
         return $this;
     }
 
     /**
-     * Get address
+     * Get latitude
      *
-     * @return string 
+     * @return float 
      */
-    public function getAddress()
+    public function getLatitude()
     {
-        return $this->address;
+        return $this->latitude;
+    }
+
+    /**
+     * Set longitude
+     *
+     * @param float $longitude
+     * @return Fiche
+     */
+    public function setLongitude($longitude)
+    {
+        $this->longitude = $longitude;
+
+        return $this;
+    }
+
+    /**
+     * Get longitude
+     *
+     * @return float 
+     */
+    public function getLongitude()
+    {
+        return $this->longitude;
     }
 }

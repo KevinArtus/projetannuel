@@ -26,7 +26,7 @@ class Fiche
     /**
      * @var string
      *
-     * @ORM\Column(name="adress", type="string", length=255)
+     * @ORM\Column(name="address", type="string", length=255)
      */
     private $address;
 
@@ -43,6 +43,20 @@ class Fiche
      * @ORM\Column(name="city", type="string", length=50)
      */
     private $city;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="latitude", type="float", nullable=true)
+     */
+    public $latitude;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="longitude", type="float", nullable=true)
+     */
+    public $longitude;
 
     /**
      * @ORM\ManyToOne(targetEntity="Projet\UserBundle\Entity\User", inversedBy="fiche")
@@ -174,5 +188,28 @@ class Fiche
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     * @return Fiche
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string 
+     */
+    public function getAddress()
+    {
+        return $this->address;
     }
 }
