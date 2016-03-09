@@ -235,4 +235,8 @@ class Fiche
     {
         return $this->longitude;
     }
+
+    public function addressString() {
+        return $this->address.", ".$this->zipcode.", ".$this->city;
+    }
 }

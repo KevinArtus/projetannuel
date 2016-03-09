@@ -18,11 +18,12 @@
                             <a href="{{ path('projet_app_map_index') }}">Accueil</a>
                         </li>
                         <li>
-                            <a href="{{ path('projet_app_fiche_new') }}">Ajouter une <fiche></fiche></a>
+                            <a href="{{ path('projet_app_fiche_new') }}">Ajouter une fiche</a>
                         </li>
                     </ul>
                     <form class="navbar-form navbar-right">
                         {% if app.user %}
+                            <a class="btn btn-default" href="{{ path('projet_app_fiche_liste') }}" role="button">Gestion de mes évènements</a>
                             <a href="{{ path('fos_user_security_logout') }}" class="btn btn-primary">Déconnexion</a>
                         {% else %}
                             <a href="{{ path('fos_user_security_login') }}" class="btn btn-primary">Connexion</a>

@@ -9,5 +9,5 @@ Contexte:
     et de l'époux. Même chose avec les écoles des enfants, des lieux de préférences (magasins, salle de sport...).
 
 Solution:
-    Le but de ce projet est de développé une application permettant de trouver les quartiers qui se trouvent à égale distance en fonction de différentes adresses fournies par l'utilisateur.
+    Le but de ce projet est de développer une application qui permet de trouver les quartiers qui se trouvent à égale distance en fonction de différentes adresses fournies par l'utilisateur.
 

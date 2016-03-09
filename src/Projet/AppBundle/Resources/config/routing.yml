@@ -12,3 +12,29 @@ projet_app_map_index:
     pattern: /
     defaults:
         _controller: ProjetAppBundle:Map:index
+
+projet_app_fiche_liste:
+    pattern: fiche/liste
+    defaults:
+        _controller: ProjetAppBundle:Fiche:liste
+
+projet_app_fiche_show:
+    pattern: fiche/liste/{id}
+    defaults:
+        _controller: ProjetAppBundle:Fiche:show
+
+projet_app_fiche_delete:
+    pattern: fiche/delete/{id}
+    defaults:
+        _controller: ProjetAppBundle:Fiche:delete
+
+projet_app_fiche_edit:
+    pattern: fiche/edit/{id}
+    defaults:
+        _controller: ProjetAppBundle:Fiche:edit
+
+projet_app_fiche_update:
+    pattern: fiche/update/{id}
+    methods: [POST]
+    defaults:
+        _controller: ProjetAppBundle:Fiche:update
