@@ -1,10 +1,18 @@
 {% extends 'ProjetAppBundle::layout.html.twig' %}
 
 {% block content %}
+    {#<aside id="aside">
+        <ul class='tabs'>
+            <li class="on" id='resultas' ><a href="#"><img src="{{ asset('assets/img/search.svg') }}"> Rechercher</a></li>
+            <li id='infos' ><a href="#"><img src="{{ asset('assets/img/info.svg') }}"> Informations</a></li>
+            <li id='help' ><a href="#"><img src="{{ asset('assets/img/help.svg') }}"> Aide</a></li>
+        </ul>
+    </aside>#}
     <div id="event-wrapper" class="container">
         <div class="row">
             <div class="col-md-9">
                 <h1>Bonjour!</h1>
+                {{ google_map(map) }}
             </div>
         </div>
     </div>

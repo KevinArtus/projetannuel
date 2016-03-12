@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Projet\UserBundle\ProjetUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Projet\AppBundle\ProjetAppBundle(),
+            new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
