@@ -59,6 +59,13 @@ class Fiche
     public $longitude;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="status", type="boolean", nullable=true)
+     */
+    public $status;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Projet\UserBundle\Entity\User", inversedBy="fiche")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      * */
