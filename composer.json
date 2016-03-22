@@ -23,7 +23,9 @@
     "friendsofSymfony/user-bundle": "dev-master",
     "egeloen/google-map-bundle": "~2.1",
     "willdurand/geocoder": "dev-master",
-    "widop/http-adapter-bundle": "dev-master"
+    "widop/http-adapter-bundle": "dev-master",
+    "league/geotools": "@stable",
+    "symfony/serializer": "^3.0"
   },
   "require-dev": {
     "sensio/generator-bundle": "~2.3"

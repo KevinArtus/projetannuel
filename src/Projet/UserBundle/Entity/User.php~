@@ -1,5 +1,4 @@
 <?php
-// src/OC/UserBundle/Entity/User.php
 
 namespace Projet\UserBundle\Entity;
 
@@ -171,5 +170,38 @@ class User extends BaseUser
     public function getCity()
     {
         return $this->city;
+    }
+
+    /**
+     * Add fiche
+     *
+     * @param \Projet\AppBundle\Entity\Fiche $fiche
+     * @return User
+     */
+    public function addFiche(\Projet\AppBundle\Entity\Fiche $fiche)
+    {
+        $this->fiche[] = $fiche;
+
+        return $this;
+    }
+
+    /**
+     * Remove fiche
+     *
+     * @param \Projet\AppBundle\Entity\Fiche $fiche
+     */
+    public function removeFiche(\Projet\AppBundle\Entity\Fiche $fiche)
+    {
+        $this->fiche->removeElement($fiche);
+    }
+
+    /**
+     * Get fiche
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFiche()
+    {
+        return $this->fiche;
     }
 }

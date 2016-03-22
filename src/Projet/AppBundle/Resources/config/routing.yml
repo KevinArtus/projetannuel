@@ -38,3 +38,9 @@ projet_app_fiche_update:
     methods: [POST]
     defaults:
         _controller: ProjetAppBundle:Fiche:update
+
+projet_app_map_ajax:
+    pattern: /map
+    methods: [POST]
+    defaults:
+        _controller: ProjetAppBundle:Map:ajax

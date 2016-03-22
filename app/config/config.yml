@@ -88,18 +88,18 @@ ivory_google_map:
         async: false
 
         # If this flag is enabled, the map will autozoom on the overlays added
-        auto_zoom: false
+        auto_zoom: true
 
         # Center coordinate of the map
         # If the autozoom flag is enabled, the center is not used
         center:
-            longitude: 0
-            latitude: 0
+            longitude: -0.3483401
+            latitude: 49.1755575
             no_wrap: true
 
         # Zoom of the map
         # If the autozoom flag is enabled, the zoom is not used
-        zoom: 6
+        zoom: 13
 
         # Bound of the map
         # If the auto zoom flag is not enabled, the bound is not used

@@ -11,3 +11,14 @@ services:
         class: Projet\UserBundle\Form\RegistrationType
         tags:
             - { name: form.type, alias: projet_user_registration }
+
+    serializer.method:
+        class: Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer
+    serializer.encoder.json:
+        class: Symfony\Component\Serializer\Encoder\JsonEncoder
+    serializer:
+        class: Symfony\Component\Serializer\Serializer
+        arguments:
+            - [@serializer.method]
+            - {json: @serializer.encoder.json }
+

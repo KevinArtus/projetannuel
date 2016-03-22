@@ -17,6 +17,20 @@
             {% block footer %}
             {% endblock %}
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        <script type="text/javascript" src="{{ asset('assets/js/jquery-2.2.2.min.js') }}"></script>
+
+        {% block javascripts %}
+            {#<script type="text/javascript" src="{{ asset('assets/js/script.js') }}"></script>#}
+            {#<script>function initMap() {#}
+                    {#var map = new google.maps.Map(document.getElementById('map_test'), {#}
+                        {#center: {lat: 36.964, lng: -122.015},#}
+                        {#zoom: 18,#}
+                        {#mapTypeId: google.maps.MapTypeId.SATELLITE#}
+                    {#});#}
+                    {#map.setTilt(45);#}
+                {#}</script>#}
+            {#<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8BsUXXnraovyQfwRj3xDcJg2COCUOTMw&callback=initMap"></script>#}
+
+        {% endblock %}
     </body>
 </html>
